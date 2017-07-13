@@ -20,6 +20,7 @@ dependencies {
     compile "org.springframework.cloud:spring-cloud-starter-sleuth"
     compile "org.springframework.cloud:spring-cloud-sleuth-stream"
     compile "org.springframework.cloud:spring-cloud-starter-stream-rabbit"
+    compile "io.pivotal.spring.cloud:spring-cloud-services-starter-config-client"
 
     compile "com.zaxxer:HikariCP:2.3.7"
     compile "mysql:mysql-connector-java:$mysqlVersion"
@@ -29,6 +30,7 @@ dependencies {
 }
 
 bootRun.environment([
+        "REGISTRATION_SERVER_ENDPOINT": "http://registration-server",
         "APPLICATION_OAUTH_ENABLED": true,
         "SECURITY_OAUTH2_CLIENT_CLIENT_ID": "72cef5b8-68e7-4359-8c56-c8c00d1a5543",
         "SECURITY_OAUTH2_CLIENT_CLIENT_SECRET": "4e1ba8c1-d871-434d-8f82-a5e1d1538be2",
